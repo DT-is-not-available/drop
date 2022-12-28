@@ -1,0 +1,58 @@
+/* light mode */
+.ldt { background: white; color: #222; }
+.ldt .comment { color: #7f7f7f; }
+.ldt .string { color: #bc6334; }
+.ldt .number { color: #008563; }
+.ldt .keyword { color: #a145a1; }
+.ldt .keywordval { color: #4548a1; }
+.ldt .macro { color: #bd0000; font-style: italic; }
+.ldt .define { color: navy; }
+.ldt .class { color: #0d5946; }
+/* dark mode */
+.dark .ldt { background: #222; color: white; }
+.dark .ldt .comment { color: #7f7f7f; }
+.dark .ldt .string { color: #f0bd75; }
+.dark .ldt .number { color: #85ffa9; }
+.dark .ldt .keyword { color: #c266ff; }
+.dark .ldt .keywordval { color: #6166ff; }
+.dark .ldt .macro { color: #ff8585; font-style: italic; }
+.dark .ldt .define { color: skyblue; }
+.dark .ldt .class { color: #8eecaf; }
+.dark .ldt textarea { caret-color: #ccc; }
+
+.ldt .editslot {
+    color: transparent;
+    background: #7775;
+    display: inline-block;
+}
+.editslot, .number, .string, .define, .keywordval {
+	border-radius: 5px; 
+}
+.editslot:hover {
+	background: #07f;
+	color: white;
+}
+.number:hover, .string:hover, .define:hover, .keywordval:hover {
+	outline: 2px solid #07f;
+}
+/* standard */
+.input, #codeArea {
+	tab-size: 4;
+	font-size: 16px !important;
+	line-height: 20px !important;
+}
+.input label {
+	height: calc(99% - 1px) !important;
+}
+button {
+	background: #e7e7e7;
+	color: #222;
+	border: 1px solid gray;
+	border-radius: 4px;
+	cursor: pointer;
+}
+.dark button {
+	background: #333;
+	color: #fff;
+	border: 1px solid gray;
+}

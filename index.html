@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Demo</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<flex class="fill column" style="height:100%;">
+		<flex id="menubar">
+			<flex class="fill">
+				<button>File
+					<menuu>
+						<div class="button" onclick="alert('Unfinished');window.blur()">New</div>
+						<hr>
+						<div class="button" onclick="alert('Unfinished');window.blur()">Save</div>
+						<div class="button" onclick="alert('Unfinished');window.blur()">Save As</div>
+						<hr>
+						<div class="button" onclick="alert('Unfinished');window.blur()">Download</div>
+						<div class="button" onclick="alert('Unfinished');window.blur()">Upload</div>
+					</menuu>
+				</button>
+				<button>Edit
+					<menuu>
+						<div class="button" onclick="alert('Unfinished');window.blur()">Cut</div>
+						<div class="button" onclick="alert('Unfinished');window.blur()">Copy</div>
+						<div class="button" onclick="alert('Unfinished');window.blur()">Paste</div>
+						<hr>
+						<div class="button" onclick="alert('Unfinished');window.blur()">Undo</div>
+						<div class="button" onclick="alert('Unfinished');window.blur()">Redo</div>
+					</menuu>
+				</button>
+				<button onclick="alert('Unfinished')">Help</button>
+			</flex>
+			<flex class="fill"></flex>
+			<flex class="fill right">
+				<button id="darkmode" onclick="dark()">Dark mode</button>
+				<button id="lightmode" onclick="light()">Light mode</button>
+				<button onclick="fullscreen()">Fullscreen</button>
+				<button id="run" onclick="run()">Run</button>
+			</flex>
+		</flex>
+		<flex class="fill">
+			<iframe id="editor" src="editor.html" class="fill"></iframe>
+			<iframe id="runtime" src="about:blank" style="width: 481px"></iframe>
+		</flex>
+	</flex>
+	<script src="index.js"></script>
+</body>
+
+</html>

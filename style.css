@@ -1,0 +1,292 @@
+body.dark {
+	background: #222;
+	color: white;
+	color-scheme: dark;
+}
+
+flex, .flex {
+	display: flex;
+}
+.right {
+	justify-content: right;
+}
+.column {
+	flex-direction: column;
+}
+.fill, .append {
+	flex: 1;
+}
+body, html {
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	overflow: hidden;
+}
+.input {
+	flex-direction: column;
+	display: flex;
+	resize: none;
+	border: none;
+	border-left: 1px solid gray;
+}
+.cat {
+	font-size: 16px;
+}
+details.cat > summary {
+    list-style-type: ' + ';
+	user-select: none;
+	cursor: pointer;
+	white-space: pre;
+	padding: 5px 0px;
+}
+
+details[open].cat > summary {
+    list-style-type: ' - ';
+}
+snippet {
+	user-select: none;
+	cursor: grab;
+	color: navy;
+	white-space: pre;
+	border: 1px dotted navy;
+	display: block;
+	tab-size: 4;
+	margin: 5px;
+	font-size: 12px;
+	background: white;
+	padding: 5px;
+	line-height: 14px;
+	transition: color 0.3s;
+	position: relative;
+}
+snippet * {
+	opacity: 1;
+	transition: opacity 0.3s;
+}
+.dark snippet {
+	color: #ccc;
+	border: 1px dotted #666;
+	background: #222;
+}
+snippet:hover, .cat summary:hover {
+	background: #00b7ff33;
+}
+
+#menubar {
+	font-family: monospace;
+	border-bottom: 1px solid gray;
+	padding: 0px;
+	gap: 0px;
+	background: #7773;
+	display: flex;
+	user-select: none;
+}
+#menubar button {
+	padding: 10px;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	font-family: monospace;
+	position: relative;
+}
+#menubar button menuu {
+	display: none;
+	background: #ddd;
+	border: 1px solid gray;
+	padding: 3px 0px;
+}
+.dark #menubar button menuu {
+	background: #444;
+}
+#menubar button menuu .button {
+	padding: 5px;
+	width: 200px;
+	text-align: left;
+}
+#menubar button menuu .button:hover {
+	background: #0bf7;
+}
+.dark #menubar button menuu .button:hover {
+	background: #7777;
+}
+#menubar button:focus menuu {
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 100%;
+}
+#menubar button:hover {
+	background: #0bf7;
+}
+.dark #menubar button:hover {
+	background: #7777;
+}
+#menubar button#run {
+	background: #0b0;
+	color: white;
+	margin: 5px;
+	padding: 5px;
+	width: 100px;
+	border-radius: 5px;
+}
+#menubar button#run:hover {
+	background: #070;
+	color: #7f7;
+}
+.dark #menubar button#run {
+	background: #070;
+	color: #7f7;
+}
+.dark #menubar button#run:hover {
+	background: #0b0;
+	color: white;
+}
+
+.replace:hover, .append:hover {
+	background: skyblue;
+}
+
+.dark .replace:hover, .dark .append:hover {
+	background: #666;
+}
+
+.insert:hover {
+	border-bottom: 2px solid #07f;
+	margin-bottom: -2px;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+#moving {
+	transition: font-size 0.3s, line-height 0.3s;
+	position: absolute;
+	pointer-events: none;
+	z-index: 1;
+	background: transparent;
+	border: none;
+	font-size: 16px;
+	line-height: 20px;
+	margin: 0px;
+}
+#moving.rounded {
+	transition: background 0.3s, font-size 0.3s, line-height 0.3s;
+	background: #7773;
+}
+#moving img {
+	opacity: 0.75;
+	scale: 0.9;
+	transition: opacity 0.3s, scale 0.3s;
+}
+#moving button.edit, #moving button.delete {
+	display: none;
+}
+snippet button.delete {
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	background: none;
+	border: none;
+	padding: none;
+}
+snippet button.delete:before {
+	content: "✖";
+}
+snippet button.edit {
+	position: absolute;
+	right: 5px;
+	top: 25px;
+	background: none;
+	border: none;
+	padding: none;
+}
+snippet button.edit:before {
+	content: "✎";
+}
+
+.input pre {
+	cursor: cell;
+	line-height: 20px;
+	font-size: 16px;
+}
+.replace > span, .insert > span {
+	pointer-events: none;
+}
+#blankline {
+	height: 20px;
+}
+#palette {
+	overflow-y: scroll;
+}
+iframe {
+	border: none;
+}
+.cat label {
+	padding-left: 5px;
+	font-size: 12px;
+}
+.slot {
+    color: transparent;
+    background: #7775;
+    width: 4ch;
+    display: inline-block;
+	transition: background 0.3s;
+	pointer-events: none;
+	border-radius: 5px;
+}
+.typeslot {
+    color: transparent;
+    background: #7775;
+    width: 4ch;
+    display: inline-block;
+	transition: background 0.3s;
+	pointer-events: none;
+	border-radius: 5px;
+}
+#sniphide {
+	color: transparent;
+	transition: color 0s;
+}
+#sniphide * {
+	opacity: 0;
+	transition: opacity 0s;
+}
+iframe {
+	border-left: 1px solid gray;
+}
+
+hr {
+	border: 1px solid gray;
+	margin: 2px 5px;
+}
+#linenumbers {
+	text-align: right;
+	padding: 4px 0px;
+	padding-right: 1ch;
+	color: #777;
+	width: 6ch;
+	font-family: monospace;
+	font-size: 16px;
+	line-height: 20px;
+	user-select: none;
+}
+#linenumbers * {
+	display: block;
+}
+#lightmode {
+	display: none;
+}
+.dark #lightmode {
+	display: inline-block;
+}
+.dark #darkmode {
+	display: none;
+}
+img {
+	user-select: none;
+	pointer-events: none;
+}
+snippet.rounded {
+	border-radius: 10px;
+}

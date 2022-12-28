@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>editor</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="editor.css">
+	<link rel="stylesheet" type="text/css" href="/ldt/TextareaDecorator.css">
+	<script src="/ldt/Parser.js" type="text/javascript"></script>
+	<script src="/ldt/TextareaDecorator.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		// get element shortcut
+		function $(e){ return document.getElementById(e); };
+		// generic syntax parser
+		var parser = new Parser({
+			newline: /\r?\n/,
+			whitespace: /[^\S\r\n]+/,
+			number: /0x[\dA-Fa-f]+|(\d+\.?\d*|\.\d+)/,
+			comment: /\/\*([^\*]|\*[^\/])*(\*\/?)?|(\/\/)[^\r\n]*/,
+			string: /"(\\.|[^"\r\n])*"?|'(\\.|[^'\r\n])*'?|`(\\.|[^`\r\n])*`?/,
+			keywordval: /(false|null|this|true|undefined|NaN|Infinity)(?!\w|=)/,
+			keyword: /(of|in|let|break|continue|case|catch|class|const|delete|do|else|extends|finally|for|function|if|new|return|switch|throw|try|var|void|while)(?!\w|=)/,
+			macro: /[A-Z]+(?!\w|=)/,
+			class: /[A-Z][$A-Z_a-z0-9]+/,
+			define: /[a-z$][$A-Z_a-z0-9]*/,
+			op: /[\+\-\*\/=<>!]=?|[\(\)\{\}\[\]\.\|]/,
+			editslot: /\x00+/,
+			other: /\S/,
+		});
+		// wait for the page to finish loading before accessing the DOM
+		window.onload = function(){
+			// get the textarea
+			var textarea = $('codeArea');
+			// start the decorator
+			decorator = new TextareaDecorator( textarea, parser );
+		};
+	</script>
+</head>
+
+<body>
+	<flex class="fill" style="height:100%;">
+		<div id="palette" style="font-family: monospace; width: 350px;">
+		</div>
+		<textarea ondrop="return false;" id="codeArea" class="input fill" spellcheck="false"></textarea>
+	</flex>
+	<script src="script.js"></script>
+</body>
+
+</html>
